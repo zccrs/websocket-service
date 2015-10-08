@@ -15,11 +15,14 @@ WebSocketService::WebSocketService(QObject *parent) : QObject(parent)
     }
     connect(tcpServer, &QTcpServer::newConnection, [tcpServer]{
         QTcpSocket *socket = tcpServer->nextPendingConnection();
-        qDebug() << "new connecnt " << socket;
+        qDebug() << "new connecnt:" << socket->peerAddress() << socket->peerName() << socket->peerPort();
         QFile file(":/default.html");
         if(file.open(QIODevice::ReadOnly)){
             socket->write(file.readAll());
         }
+        connect(socket, &QTcpSocket::disconnected, [socket]{
+            socket->deleteLater();
+        });
     });
 }
 
