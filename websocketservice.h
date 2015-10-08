@@ -3,15 +3,21 @@
 
 #include <QObject>
 
+class QTcpServer;
+class QWebSocketServer;
 class WebSocketService : public QObject
 {
     Q_OBJECT
 public:
     explicit WebSocketService(QObject *parent = 0);
+    ~WebSocketService();
 
-signals:
+    bool startTcpService();
+    bool startWebSocketService();
 
-public slots:
+private:
+    QTcpServer *m_tcpServer;
+    QWebSocketServer *m_webSocketServer;
 };
 
 #endif // WEBSOCKETSERVICE_H

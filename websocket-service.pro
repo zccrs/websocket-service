@@ -13,6 +13,5 @@ SOURCES += main.cpp \
 HEADERS += \
     websocketservice.h
 
-RESOURCES += \
-    data.qrc
+RESOURCES +=
 
