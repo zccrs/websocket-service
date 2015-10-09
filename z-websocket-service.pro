@@ -1,7 +1,7 @@
 QT += core network websockets
 QT -= gui
 
-TARGET = websocket-service
+TARGET = z-websocket-service
 CONFIG += console c++11
 CONFIG -= app_bundle
 
@@ -13,5 +13,8 @@ SOURCES += main.cpp \
 HEADERS += \
     websocketservice.h
 
-RESOURCES +=
+DESTDIR         = $$_PRO_FILE_PWD_/
 
+target.path = /usr/bin/
+
+INSTALLS += target

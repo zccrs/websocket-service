@@ -3,7 +3,6 @@
 
 #include <QObject>
 
-class QTcpServer;
 class QWebSocketServer;
 class WebSocketService : public QObject
 {
@@ -12,11 +11,9 @@ public:
     explicit WebSocketService(QObject *parent = 0);
     ~WebSocketService();
 
-    bool startTcpService();
     bool startWebSocketService();
 
 private:
-    QTcpServer *m_tcpServer;
     QWebSocketServer *m_webSocketServer;
 };
 
