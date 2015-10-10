@@ -13,7 +13,7 @@ SOURCES += main.cpp \
 HEADERS += \
     websocketservice.h
 
-DESTDIR         = $$_PRO_FILE_PWD_/
+#DESTDIR         = $$_PRO_FILE_PWD_/
 
 target.path = /usr/bin/
 
