@@ -3,18 +3,22 @@
 
 #include <QObject>
 
+class QWebSocket;
 class QWebSocketServer;
-class WebSocketService : public QObject
+class ZWebSocketService : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebSocketService(QObject *parent = 0);
-    ~WebSocketService();
+    explicit ZWebSocketService(QObject *parent = 0);
+    ~ZWebSocketService();
 
     bool startWebSocketService();
 
 private:
     QWebSocketServer *m_webSocketServer;
+
+    //void sendAlert(QWebSocket *socket, ...);
+    void sendAlert(QWebSocket *socket, const char *message, ...);
 };
 
 #endif // WEBSOCKETSERVICE_H

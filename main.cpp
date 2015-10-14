@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    WebSocketService server;
+    ZWebSocketService server;
     server.startWebSocketService();
 
     return a.exec();
