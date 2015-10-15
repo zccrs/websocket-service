@@ -17,6 +17,9 @@ HEADERS += \
 
 target.path = /usr/bin/
 
-INSTALLS += target
-
 OTHER_FILES += z-websocket.service
+
+service.path = /etc/systemd/system/
+service.files = z-websocket.service
+
+INSTALLS += target service
